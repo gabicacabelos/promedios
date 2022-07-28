@@ -21,41 +21,35 @@ if (isset($_GET['boton']) && $_GET['num'] <0 or $_GET['num1'] <0 or $_GET['num2'
    $arr_negativos=array_filter($el_array, 'get_negativosfiltro');
    if (count($arr_negativos)>0){
        $media_negativos=array_sum($arr_negativos)/count($arr_negativos);
+       echo "La media de los numeros negativos es: $media_negativos" . "<br>";
+       print_r($arr_negativos);
     }else{
         $media_negativos=0;
     }
-    echo "La media de los numeros negativos es: $media_negativos" . "<br>";
-
-
-print_r($arr_negativos);
-
-
-
-
     
+
+
 
 if (isset($_GET['boton']) && $_GET['num'] >0 or $_GET['num1'] >0 or $_GET['num2'] >0 or $_GET['num3'] >0 or $_GET['num4'] >0){
     
     $arr_positivos=array_filter($el_array, 'get_positivosfiltro');
     if (count($arr_positivos)>0){
         $media_positivos=array_sum($arr_positivos)/count($arr_positivos);
+        echo "<br>"."La media de los numeros positivos es: $media_positivos" . "<br>";
+        print_r($arr_positivos);
      }else{
          $media_positivos=0;
      }
      
-     echo "<br>"."La media de los numeros positivos es: $media_positivos" . "<br>";
- 
- 
- print_r($arr_positivos);
- 
+    
  
     }}
     if (isset($_GET['boton']) && $_GET['num'] >0 && $_GET['num1'] >0 && $_GET['num2'] >0 && $_GET['num3'] >0 && $_GET['num4'] >0){
         $media_total=array_sum($el_array)/count($el_array);
         echo "<br>"."Los numeros son todos positivos y la media total es: $media_total" . "<br>";
-    }else{
-        echo "Los numeros varian entre positivos y negativos";
     }
+    
+    
  
  
  
@@ -71,32 +65,7 @@ function get_negativosfiltro($array){
         }}
 
 
-
-
-
-
-
-
-
-
-
-   
-    
-
-    
     ?>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -117,8 +86,8 @@ function get_negativosfiltro($array){
         <input type="number" name="num3" value="<?php echo $numero3; ?>" >
         <input type="number" name="num4" value="<?php echo $numero4; ?>">
 
-        <input type="submit" name="boton" value="Enviar">
-        <input type="submit" name="valores" value=" dar valores aleatorios">
+        <input type="submit" name="boton" value="Calcular Media">
+        <input type="submit" name="valores" value="Dar valores aleatorios">
 
     </form>
     
