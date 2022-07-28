@@ -26,7 +26,7 @@ if (isset($_GET['boton']) && $_GET['num'] <0 or $_GET['num1'] <0 or $_GET['num2'
     }
     echo "La media de los numeros negativos es: $media_negativos" . "<br>";
 
-echo "Negativos usando array_filter: ". $negativos_filtro."<br>";
+
 print_r($arr_negativos);
 
 
@@ -45,11 +45,17 @@ if (isset($_GET['boton']) && $_GET['num'] >0 or $_GET['num1'] >0 or $_GET['num2'
      
      echo "<br>"."La media de los numeros positivos es: $media_positivos" . "<br>";
  
- echo "positivos usando array_filter: ". $positivos_filtro."<br>";
+ 
  print_r($arr_positivos);
  
  
     }}
+    if (isset($_GET['boton']) && $_GET['num'] >0 && $_GET['num1'] >0 && $_GET['num2'] >0 && $_GET['num3'] >0 && $_GET['num4'] >0){
+        $media_total=array_sum($el_array)/count($el_array);
+        echo "<br>"."Los numeros son todos positivos y la media total es: $media_total" . "<br>";
+    }else{
+        echo "Los numeros varian entre positivos y negativos";
+    }
  
  
  
